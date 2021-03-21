@@ -6,7 +6,7 @@ const Login = () => {
   return (
     <Wrapper>
       <div className='container'>
-        <img scr={loginImg} alt='github user' />
+        <img scr={loginImg} className='login-img' alt='' />
         <h1>Github user</h1>
         <button className='btn'>Login</button>
       </div>
