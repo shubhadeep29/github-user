@@ -9,9 +9,9 @@ const rootUrl = 'https://api.github.com';
 const GithubContext = React.createContext();
 
 const GithubProvider = ({ children }) => {
-  const [githubUser, setGithubUser] = useState(mockUser);
-  const [repos, setRepos] = useState(mockRepos);
-  const [followers, setFollowers] = useState(mockFollowers);
+  const [githubUser, setGithubUser] = useState([]);
+  const [repos, setRepos] = useState([]);
+  const [followers, setFollowers] = useState([]);
 
   const [requests, setRequest] = useState(0);
   const [isLoading, setIsLoading] = useState(false);
@@ -70,6 +70,11 @@ const GithubProvider = ({ children }) => {
   }
 
   useEffect(checkRequest, []);
+
+  useEffect(() => {
+    searchGithubUser('john-smilga');
+  }, []);
+
   return (
     <GithubContext.Provider
       value={{

@@ -13,6 +13,7 @@ const Search = () => {
       searchGithubUser(user);
     }
   };
+
   return (
     <section className='section'>
       <Wrapper className='section-center'>
